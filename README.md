@@ -23,3 +23,7 @@ Este comando serve para subir o banco de dados para o docker. Após essa etapa, 
 
 > [!TIP]
 > Pode ser que sua IDE não reconheça de primeira que o projeto é Maven, recomendo que busque como "forçar" a atualização do projeto para Maven na sua IDE.
+
+## Documentação:
+
+Segue o link para acessar a [Documentação](https://github.com/guilherme-miranda04/autoflex-back-end/blob/main/src/README.md), contendo todos os endpoints com métodos, body necessário e os callbacks dos mesmos.
