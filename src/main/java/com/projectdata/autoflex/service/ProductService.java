@@ -44,10 +44,6 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
-//    public List<Product> listProducts() {
-//        return productRepository.findAll();
-//    }
-
     public List<ProductResponseDTO> listProducts() {
         return productRepository.findAll().stream().map(product -> {
 

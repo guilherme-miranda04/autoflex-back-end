@@ -52,7 +52,7 @@ public class RawMaterialService {
         return rawMaterialRepository.findAll().stream().map(rawMaterial -> {
 
             // Converte a lista de associações para o DTO simples
-            var materials = rawMaterial.getProducts().stream().map(prm ->
+            var products = rawMaterial.getProducts().stream().map(prm ->
                     new RawMaterialProductResponseDTO(
                             prm.getProduct().getName(),
                             prm.getProduct().getCode()
@@ -65,7 +65,7 @@ public class RawMaterialService {
                     rawMaterial.getCode(),
                     rawMaterial.getName(),
                     rawMaterial.getStockQuantity(),
-                    materials
+                    products
             );
         }).toList();
     }
@@ -96,7 +96,7 @@ public class RawMaterialService {
                 rawMaterial.setCode(updateRawMaterialDTO.code());
             }
 
-            if (updateRawMaterialDTO.code() != null) {
+            if (updateRawMaterialDTO.stockQuantity() != null) {
                 rawMaterial.setStockQuantity(updateRawMaterialDTO.stockQuantity());
             }
 
