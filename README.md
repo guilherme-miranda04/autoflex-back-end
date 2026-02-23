@@ -2,7 +2,6 @@
 Este projeto foi utilizado para um teste prático para a Autoflex. A arquitetura utilizada é `Springboot` com Maven
 
 ## Pré-requisitos
-
 - JDK 17
 - Docker Desktop.
 
@@ -27,3 +26,4 @@ Este comando serve para subir o banco de dados para o docker. Após essa etapa, 
 ## Documentação:
 
 Segue o link para acessar a [Documentação](https://github.com/guilherme-miranda04/autoflex-back-end/blob/main/src/README.md), contendo todos os endpoints com métodos, body necessário e os callbacks dos mesmos.
+
