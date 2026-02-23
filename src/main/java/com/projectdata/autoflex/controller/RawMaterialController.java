@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
 import java.util.List;
 
 @RestController
@@ -26,9 +25,10 @@ public class RawMaterialController {
     @PostMapping
     public ResponseEntity<RawMaterial> createRawMaterial(@RequestBody CreateRawMaterialDTO createRawMaterialDTO) {
         try {
-            var rawMaterialID = rawMaterialService.createRawMaterial(createRawMaterialDTO);
+            var createdProduct = rawMaterialService.createRawMaterial(createRawMaterialDTO);
 
-            return ResponseEntity.created(URI.create("/raw-material/" + rawMaterialID.toString())).build();
+//          return ResponseEntity.created(URI.create("/raw-material/" + rawMaterialID.toString())).build();
+            return ResponseEntity.ok(createdProduct);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }

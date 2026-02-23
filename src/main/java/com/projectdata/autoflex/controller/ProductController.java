@@ -27,11 +27,11 @@ public class ProductController {
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody CreateProductDTO createProductDTO) {
         try {
-            var updatedProduct = productService.createProduct(createProductDTO);
+            var createdProduct = productService.createProduct(createProductDTO);
 
 //            return ResponseEntity.created(URI.create("/product/" + updatedProduct.getId().toString())).build();
 
-            return ResponseEntity.ok(updatedProduct);
+            return ResponseEntity.ok(createdProduct);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }

@@ -22,7 +22,7 @@ public class RawMaterialService {
     }
 
     // Create
-    public UUID createRawMaterial(CreateRawMaterialDTO createRawMaterialDTO) {
+    public RawMaterial createRawMaterial(CreateRawMaterialDTO createRawMaterialDTO) {
 
         var entity = new RawMaterial(
                 createRawMaterialDTO.code(),
@@ -33,7 +33,7 @@ public class RawMaterialService {
 
         var saved = rawMaterialRepository.save(entity);
 
-        return saved.getId();
+        return saved;
     }
 
     // Get by ID
@@ -42,11 +42,6 @@ public class RawMaterialService {
 
         return rawMaterialRepository.findById(id);
     }
-
-    // Get All
-//    public List<RawMaterial> listRawMaterials() {
-//        return rawMaterialRepository.findAll();
-//    }
 
     public List<RawMaterialResponseDTO> listRawMaterials() {
         return rawMaterialRepository.findAll().stream().map(rawMaterial -> {
